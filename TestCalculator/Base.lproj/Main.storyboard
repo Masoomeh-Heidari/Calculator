@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLl-48-DDZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="152"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ofp-V5-GEg">
+                                        <rect key="frame" x="0.0" y="76" width="375" height="76"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="76" id="EcR-lZ-SUZ"/>
+                                        </constraints>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="90"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Ofp-V5-GEg" firstAttribute="leading" secondItem="nLl-48-DDZ" secondAttribute="leading" id="24r-SX-1zI"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ofp-V5-GEg" secondAttribute="trailing" id="Kap-m8-Eih"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ofp-V5-GEg" secondAttribute="bottom" id="eai-b2-zJb"/>
+                                    <constraint firstItem="Ofp-V5-GEg" firstAttribute="top" secondItem="nLl-48-DDZ" secondAttribute="top" constant="76" id="xrX-yy-7B1"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rhH-Y4-Huf" userLabel="Number Pad View">
+                                <rect key="frame" x="0.0" y="152" width="375" height="515"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5aP-1n-ZkF">
+                                        <rect key="frame" x="20" y="20" width="335" height="475"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Wn9-Xh-OME">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="91"/>
+                                                <subviews>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXp-ra-jEH" customClass="RoundButton" customModule="TestCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="5.5" width="80" height="80"/>
+                                                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="2cv-18-WW5"/>
+                                                            <constraint firstAttribute="height" constant="80" id="AMh-gQ-STc"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="AC">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tEV-s4-23G"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4A-au-XVi" customClass="RoundButton" customModule="TestCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="85" y="5.5" width="80" height="80"/>
+                                                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="BZo-X7-y5W"/>
+                                                            <constraint firstAttribute="height" constant="80" id="x8r-2N-8fS"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="+/-">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E0V-cm-lQN"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6T3-Jo-6Yc" customClass="RoundButton" customModule="TestCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="170" y="5.5" width="80" height="80"/>
+                                                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="1JM-Lr-yuG"/>
+                                                            <constraint firstAttribute="width" constant="80" id="lnt-ua-fJn"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="%">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G9g-QR-RgU"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fu9-ln-JlZ" customClass="RoundButton" customModule="TestCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="255" y="5.5" width="80" height="80"/>
+                                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="6uM-a3-qZe"/>
+                                                            <constraint firstAttribute="width" constant="80" id="9O0-my-UYg"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="÷">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ybT-oj-NaL"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="6Qn-aC-gb3">
+                                                <rect key="frame" x="0.0" y="96" width="335" height="91"/>
+                                                <subviews>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Klg-6k-zAu" customClass="RoundButton" customModule="TestCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="5.5" width="80" height="80"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="GfM-gd-SHH"/>
+                                                            <constraint firstAttribute="height" constant="80" id="W7m-Fx-js4"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="7">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ECK-2o-Ol3"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cl3-GC-1On" customClass="RoundButton" customModule="TestCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="85" y="5.5" width="80" height="80"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="Sav-l0-4zv"/>
+                                                            <constraint firstAttribute="height" constant="80" id="c1s-HK-atI"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="8">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XPG-aJ-aqJ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zG2-9s-IgS" customClass="RoundButton" customModule="TestCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="170" y="5.5" width="80" height="80"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="A1Y-hy-qMH"/>
+                                                            <constraint firstAttribute="height" constant="80" id="TLc-r3-hxO"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="9">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="leK-Y0-Seb"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="luB-JV-cUK" customClass="RoundButton" customModule="TestCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="255" y="5.5" width="80" height="80"/>
+                                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="LBW-wi-6zf"/>
+                                                            <constraint firstAttribute="width" constant="80" id="QMg-tf-xLp"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="✕">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ifQ-TH-o91"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="9gS-RB-XLv">
+                                                <rect key="frame" x="0.0" y="192" width="335" height="91"/>
+                                                <subviews>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvS-d6-AAT" customClass="RoundButton" customModule="TestCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="5.5" width="80" height="80"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="9WZ-lI-Jhq"/>
+                                                            <constraint firstAttribute="height" constant="80" id="tZS-6D-bdC"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="4">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OFK-pZ-cu4"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZvH-H9-bOv" customClass="RoundButton" customModule="TestCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="85" y="5.5" width="80" height="80"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="fg1-lv-UmD"/>
+                                                            <constraint firstAttribute="width" constant="80" id="hfp-1G-gno"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="5">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="45l-dd-SSK"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JgO-3p-Pbn" customClass="RoundButton" customModule="TestCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="170" y="5.5" width="80" height="80"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="JD0-XV-Xlj"/>
+                                                            <constraint firstAttribute="width" constant="80" id="a2b-H7-QPM"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="6">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T0B-Yw-PBe"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Afh-iO-0xY" customClass="RoundButton" customModule="TestCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="255" y="5.5" width="80" height="80"/>
+                                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="2IU-vU-Vc8"/>
+                                                            <constraint firstAttribute="width" constant="80" id="tK0-I6-0OY"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="−">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A0g-sI-qa4"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ivo-sl-meh">
+                                                <rect key="frame" x="0.0" y="288" width="335" height="91"/>
+                                                <subviews>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWF-rQ-l0E" customClass="RoundButton" customModule="TestCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="5.5" width="80" height="80"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="fxj-70-Foz"/>
+                                                            <constraint firstAttribute="height" constant="80" id="xqx-Lc-fhx"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="1">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rnz-xs-xvP"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3RH-Bd-tfB" customClass="RoundButton" customModule="TestCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="85" y="5.5" width="80" height="80"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="DkE-nI-OST"/>
+                                                            <constraint firstAttribute="height" constant="80" id="pZd-4B-tc5"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="2">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kgl-Jl-N7Q"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yq3-G1-n68" customClass="RoundButton" customModule="TestCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="170" y="5.5" width="80" height="80"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="MJm-HJ-a3S"/>
+                                                            <constraint firstAttribute="width" constant="80" id="eMU-cw-R6i"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="3">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XFO-hh-fiI"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dz0-AY-4QW" customClass="RoundButton" customModule="TestCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="255" y="5.5" width="80" height="80"/>
+                                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="Qnt-jr-JRw"/>
+                                                            <constraint firstAttribute="height" constant="80" id="zoI-XX-RFi"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="＋">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V7F-0Q-nRX"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="EPW-ie-cEm">
+                                                <rect key="frame" x="0.0" y="384" width="335" height="91"/>
+                                                <subviews>
+                                                    <button opaque="NO" clipsSubviews="YES" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJa-A1-quk">
+                                                        <rect key="frame" x="0.0" y="5.5" width="167.5" height="80"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="ey9-WB-fCL"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="0">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zko-Cc-Qhm"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzR-7b-H4G" customClass="RoundButton" customModule="TestCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="171.5" y="5.5" width="80" height="80"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="RMI-QB-XI3"/>
+                                                            <constraint firstAttribute="width" constant="80" id="oxv-fV-5QO"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title=".">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cFB-zg-5An"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74d-zl-xVZ" customClass="RoundButton" customModule="TestCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="255" y="5.5" width="80" height="80"/>
+                                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="iE4-bd-wJC"/>
+                                                            <constraint firstAttribute="height" constant="80" id="kNy-KD-vYG"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="＝">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e2S-0R-aFV"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="cJa-A1-quk" firstAttribute="width" secondItem="EPW-ie-cEm" secondAttribute="width" multiplier="1:2" id="JPg-XU-YQS"/>
+                                                    <constraint firstItem="VzR-7b-H4G" firstAttribute="width" secondItem="74d-zl-xVZ" secondAttribute="width" id="qnH-IL-46l"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="5aP-1n-ZkF" firstAttribute="leading" secondItem="rhH-Y4-Huf" secondAttribute="leading" constant="20" id="3bD-C6-cx4"/>
+                                    <constraint firstAttribute="trailing" secondItem="5aP-1n-ZkF" secondAttribute="trailing" constant="20" id="F37-K1-jlp"/>
+                                    <constraint firstAttribute="bottom" secondItem="5aP-1n-ZkF" secondAttribute="bottom" constant="20" id="MgC-U8-3Lg"/>
+                                    <constraint firstItem="5aP-1n-ZkF" firstAttribute="top" secondItem="rhH-Y4-Huf" secondAttribute="top" constant="20" id="sct-qG-3p1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nLl-48-DDZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0Mj-fo-mAH"/>
+                            <constraint firstItem="nLl-48-DDZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="R1j-kI-pop"/>
+                            <constraint firstItem="rhH-Y4-Huf" firstAttribute="top" secondItem="nLl-48-DDZ" secondAttribute="bottom" id="TZK-Vk-szy"/>
+                            <constraint firstItem="rhH-Y4-Huf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="WFQ-I8-T73"/>
+                            <constraint firstItem="nLl-48-DDZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="f8N-CE-BDv"/>
+                            <constraint firstItem="rhH-Y4-Huf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hHI-Ce-LFe"/>
+                            <constraint firstItem="rhH-Y4-Huf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kQr-7p-shk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="Ofp-V5-GEg" id="uWm-Cg-g8t"/>
+                        <outlet property="zeroBtn" destination="cJa-A1-quk" id="P0h-sR-LS1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="109.29535232383809"/>
+        </scene>
+    </scenes>
+</document>
